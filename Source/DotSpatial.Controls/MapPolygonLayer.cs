@@ -286,13 +286,17 @@ namespace DotSpatial.Controls
                 {
                     foreach (Extent region in regions)
                     {
-                        if (!shapes[shp].Extent.Intersects(region)) continue;
+                        // default code below will not print full polygon within print range so commented out
+                        //if (!shapes[shp].Extent.Intersects(region)) continue;
                         drawList.Add(shp);
                         break;
                     }
                 }
 
-                DrawFeatures(args, drawList, clipRects, true, selected);
+                //Removed:=> DrawFeatures(args, drawList, clipRects, true, selected);
+                MapArgs argsNew = new MapArgs(new Rectangle(0, 0, args.ImageRectangle.Width, args.ImageRectangle.Height), args.GeographicExtents, args.Device);
+                DrawFeatures(argsNew, drawList, clipRects, true, selected);
+                
             }
         }
 

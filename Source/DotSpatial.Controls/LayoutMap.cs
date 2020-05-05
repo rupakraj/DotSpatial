@@ -169,9 +169,72 @@ namespace DotSpatial.Controls
             else
             {
                 // MapControl.Print(g, new Rectangle(Location.X, Location.Y, Convert.ToInt32(Size.Width), Convert.ToInt32(Size.Height)), _envelope.ToExtent());
-                MapControl.Print(g, new Rectangle((int)Location.X / 2, (int)Location.Y / 2, Convert.ToInt32(Size.Width), Convert.ToInt32(Size.Height)), _envelope.ToExtent());
+                // MapControl.Print(g, new Rectangle((int)Location.X / 2, (int)Location.Y / 2, Convert.ToInt32(Size.Width), Convert.ToInt32(Size.Height)), _envelope.ToExtent());
+                MapControl.Print(g, new Rectangle(Location.X, Location.Y, (int)Size.Width, (int)Size.Height), MapControl.ViewExtents);
 
+                // Experimentatal Code
+                //var DPI = 100;
+                                //if ( MapControl.Layers.Count <= 0 || Convert.ToInt32(Size.Width) <= 0 || Convert.ToInt32(Size.Height) <= 0 )
+                                //    return;
+                
+                                //if ( _buffer != null && ( ( _buffer.Width != Convert.ToInt32(Size.Width * DPI / 100) || _buffer.Height != Convert.ToInt32(Size.Height * DPI / 100) ) || _extentChanged ) ) {
+                                //    _extentChanged = false;
+                                //    _buffer.Dispose();
+                                //    _buffer = null;
+                                //}
+                
+                                //if ( _buffer == null ) {
+                                //    _buffer = new Bitmap(Convert.ToInt32(Size.Width * DPI / 100), Convert.ToInt32(Size.Height * DPI / 100), PixelFormat.Format32bppArgb);
+                                //    _buffer.SetResolution(DPI, DPI);
+                                //    Graphics graph = Graphics.FromImage(_buffer);
+                                //    MapControl.Print(graph, new Rectangle(0, 0, _buffer.Width, _buffer.Height), _envelope.ToExtent());
+                                //    graph.Dispose();
+                                //}
+                                // _buffer = new Bitmap(Convert.ToInt32(Size.Width * DPI / 100), Convert.ToInt32(Size.Height * DPI / 100), PixelFormat.Format32bppArgb);
+                               // _buffer.SetResolution(DPI, DPI);
+                                //g = Graphics.FromImage(_buffer);
+                                //MapControl.Location = new Point(Location.X, Location.Y);
+                                //g.SetClip(new Rectangle(Location.X/2, Location.Y/2, ( int ) Size.Width, ( int ) Size.Height));
+                                //Envelope env = new Envelope(_envelope);
+                                //Extent extent = new Extent(MapControl.ViewExtents
+                                //Location = 
+                //MapControl.Print(g, new Rectangle(Location.X, Location.Y, (int)Size.Width, (int)Size.Height), MapControl.ViewExtents);
+                
+                                //g.Dispose();
+                
+                                //g.DrawImage(_buffer, Rectangle);
+                
+                                /*
+                    _buffer = new Bitmap(Convert.ToInt32(Size.Width * 96 / 100), Convert.ToInt32(Size.Height * 96 / 100), PixelFormat.Format32bppArgb);
+                    _buffer.SetResolution(96, 96);
+                    Graphics graph = Graphics.FromImage(_buffer);
+                    MapControl.Print(g, new Rectangle(Location.X/2, Location.Y, Convert.ToInt32(Size.Width), Convert.ToInt32(Size.Height)), _envelope.ToExtent());
+                    //MapControl.Print(g, new Rectangle(0,0, Convert.ToInt32(Size.Width), Convert.ToInt32(Size.Height)), _envelope.ToExtent());
+                    //MapControl.Print(g, new Rectangle(
+                    //                    Convert.ToInt32(( Location.X * 0.51 ) ),
+                    //                    Convert.ToInt32(( Location.Y * 0.5050 ) ),
+                    //                    //Convert.ToInt32(Size.Width*0.999), Convert.ToInt32(Size.Height*1.1265)
+                    //                    Convert.ToInt32(_buffer.Width*1.035), Convert.ToInt32(_buffer.Height*1.035)
+                    //        ),
+                    //        _envelope.ToExtent()
+                    //);
+
+                    //MapControl.Print(g, new Rectangle(
+                    //                    Convert.ToInt32(( Location.X * 0.6 )),
+                    //                    Convert.ToInt32(( Location.Y * 0.5080 )),
+                    //                    //Convert.ToInt32(Size.Width*0.999), Convert.ToInt32(Size.Height*1.1265)
+                    //                    Convert.ToInt32(Size.Width * 0.98), Convert.ToInt32(Size.Height * 0.98)
+                    //                     ),
+                    //        _envelope.ToExtent()
+                    //);
+
+                    //MapControl.Print(g, new Rectangle(Convert.ToInt32(Location.X * 96 / 100),
+                    //                                    Convert.ToInt32(Location.Y * 96 / 100),
+                    //                                    _buffer.Width, _buffer.Height), _envelope.ToExtent());
+                    //MapControl.Print(g, new Rectangle(0, 0, _buffer.Width, _buffer.Height), _envelope.ToExtent());
+                    */
             }
+
         }
 
         /// <summary>
