@@ -1051,7 +1051,8 @@ namespace DotSpatial.Controls
 
                 for (int i = 0; i < catFeatures.Count; i++)
                 {
-                    if (!FeatureLayer.DrawnStates[i].Visible) continue;
+                    // if (!FeatureLayer.DrawnStates[i].Visible) continue;
+                    try { if (!FeatureLayer.DrawnStates[i].Visible) continue; } catch { }
                     drawFeature(catFeatures[i]);
                 }
             }

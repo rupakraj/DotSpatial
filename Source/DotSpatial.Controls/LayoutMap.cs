@@ -168,7 +168,9 @@ namespace DotSpatial.Controls
             }
             else
             {
-                MapControl.Print(g, new Rectangle(Location.X, Location.Y, Convert.ToInt32(Size.Width), Convert.ToInt32(Size.Height)), _envelope.ToExtent());
+                // MapControl.Print(g, new Rectangle(Location.X, Location.Y, Convert.ToInt32(Size.Width), Convert.ToInt32(Size.Height)), _envelope.ToExtent());
+                MapControl.Print(g, new Rectangle((int)Location.X / 2, (int)Location.Y / 2, Convert.ToInt32(Size.Width), Convert.ToInt32(Size.Height)), _envelope.ToExtent());
+
             }
         }
 
