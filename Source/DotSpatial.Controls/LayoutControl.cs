@@ -1542,7 +1542,7 @@ namespace DotSpatial.Controls
         /// Adds the specified LayoutElement le to the selection.
         /// </summary>
         /// <param name="le">The layout element.</param>
-        internal void AddToSelection(LayoutElement le)
+        public void AddToSelection(LayoutElement le)
         {
             SelectedLayoutElements.Add(le);
             Invalidate(new Region(PaperToScreen(le.Rectangle)));
@@ -1553,7 +1553,7 @@ namespace DotSpatial.Controls
         /// Adds the specified LayoutElement le to the selection.
         /// </summary>
         /// <param name="le">The layout element.</param>
-        internal void AddToSelection(List<LayoutElement> le)
+        public void AddToSelection(List<LayoutElement> le)
         {
             SelectedLayoutElements.AddRange(le);
             Invalidate();
