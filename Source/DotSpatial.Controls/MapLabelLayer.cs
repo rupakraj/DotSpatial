@@ -1051,6 +1051,11 @@ namespace DotSpatial.Controls
 
                 for (int i = 0; i < catFeatures.Count; i++)
                 {
+                    if (catFeatures[i].FeatureType == FeatureType.Line || catFeatures[i].FeatureType == FeatureType.Point)
+                    {
+                        drawFeature(catFeatures[i]);
+                        continue;
+                    }
                     // if (!FeatureLayer.DrawnStates[i].Visible) continue;
                     try { if (!FeatureLayer.DrawnStates[i].Visible) continue; } catch { }
                     drawFeature(catFeatures[i]);
